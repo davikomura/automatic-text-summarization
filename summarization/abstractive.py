@@ -1,7 +1,5 @@
 from transformers import pipeline
-from transformers.pipelines.pt_utils import KeyDataset
 from transformers import AutoTokenizer
-import math
 
 class AbstractiveSummarizer:
     def __init__(self, model_name="facebook/bart-large-cnn"):

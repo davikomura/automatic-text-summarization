@@ -22,9 +22,11 @@ def main():
     for article in articles:
         full_text = " ".join(article['sentences'])
         summaries = summarizer.summarize_article(full_text)
+        
         summarized_articles.append({
-            **article,
-            **summaries
+            'title': article['title'],
+            'summary_extractive': summaries['summary_extractive'],
+            'summary_abstractive': summaries['summary_abstractive']
         })
 
     with open('data/processed/bbc_summarized_news.json', 'w', encoding='utf-8') as f:
